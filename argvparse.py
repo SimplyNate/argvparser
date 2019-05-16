@@ -1,6 +1,3 @@
-import sys
-
-
 def check_switches(args, switches=None, delimiter="-"):
     """
     Maps argv variable to usable dictionary
@@ -49,7 +46,3 @@ def check_switches(args, switches=None, delimiter="-"):
     else:
         return parsed_args
 
-
-acceptable = ["-s", "-d", "-f", "-e", "-a"]
-awgs = check_switches(sys.argv, acceptable)
-print(awgs)
