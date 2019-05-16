@@ -13,6 +13,6 @@ import argvparse
 import sys
 
 acceptable = ["-s", "-d", "-a", "-f"]
-args = argvparse.check_switches(sys.argv, acceptable, "/")
+args = argvparse.check_switches(sys.argv, acceptable, "-")
 print(args)
 ```
