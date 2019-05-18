@@ -17,7 +17,7 @@ args = argvparse.check_switches(sys.argv, acceptable, "-")
 print(args)
 print(args["-s"])
 ```  
-  
+Sample Output  
 ```cmd  
 py example.py -s C:\Users\Admin -d C:\bk\ -a -f
 
