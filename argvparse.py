@@ -4,7 +4,7 @@ def check_switches(args, switches=None, delimiter="-"):
     :param args: argv variable from sys.argv
     :param switches: Optional list of required/optional switches, switches w/argument or singular
     :param delimiter: String used to denote a switch. Defaults to a dash
-    :return: Dictionary of args bound to their switch
+    :return: Dictionary of args bound to their switch, Error message
     """
     # Dictionary assigned with all args and their values
     count = 0
@@ -35,14 +35,11 @@ def check_switches(args, switches=None, delimiter="-"):
                         parsed_args[args[i]] = True
                         count += 1
                 else:
-                    print(f"Bad option {args[i]}. Quitting")
-                    raise SystemExit
+                    return None, f"Bad option {args[i]}. Quitting"
     # check if the args dictionary matches what was given in the command
     # Minus 1 because we don't count the name of the program, add the count value back for correct number
     if len(parsed_args) * 2 != len(args) - 1 + count:
-        print("Malformed command. Possible spaces in source or destination paths. Use quotations around paths"
-              " if there are spaces.")
-        raise SystemExit
+        return None, "Malformed command. Possible spaces in source or destination paths. Use quotations around paths if there are spaces."
     else:
-        return parsed_args
+        return parsed_args, None
 
