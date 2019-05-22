@@ -6,16 +6,20 @@ Parses arguments passed to Python script to a dictionary. Arguments passed to sw
 1.  Download the argvparser.py file and import it into your script (or integrate the function into your file)  
 2.  Create a variable holding a list of acceptable switches
 3.  Call the function with `argv`, Step 2 variable, and a delimiter of your choice for denoting switches (default "-")  
+`check_switches(sys.argv, your_list, your_delimiter)`  
   
 ## Example  
 ```python
-import argvparse
+from argvparse import check_switches
 import sys
 
 acceptable = ["-s", "-d", "-a", "-f"]
-args = argvparse.check_switches(sys.argv, acceptable, "-")
-print(args)
-print(args["-s"])
+args, err = check_switches(sys.argv, acceptable, "-")
+if err is None:
+    print(err)
+else:
+    print(args)
+    print(args["-s"])
 ```  
 Sample Output  
 ```cmd  
