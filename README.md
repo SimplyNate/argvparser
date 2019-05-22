@@ -1,5 +1,7 @@
 # argvparser
-Parses arguments passed to Python script to a dictionary. Arguments passed to switches can be called via their switch name or letter. Switches used without an argument get a boolean value `True` assigned to it in the dictionary.
+Parses arguments passed to Python script to a dictionary. Arguments passed to switches can be called via their switch name or letter. Switches used without an argument get a boolean value `True` assigned to it in the dictionary.  
+  
+Function returns a dictionary and error message if any.
 
 ## Instructions  
   
